@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Exo:wght@300;600&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Exo:wght@300;600&family=Montserrat&family=Titillium+Web&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #1F1F1F;
+  --gray: #363636;
+  --red: #FF5252;
+  --white: #FFFFFF;
+
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 90%;
+  /* background-color: var(--gray) */
+}
+
+.title {
+  font-family: 'Aclonica', sans-serif;
+  font-size: 38px;
+  color: var(--red);
+}
+
+.subtitle {
+  font-family: 'Aclonica', sans-serif;
+  font-size: 28px;
+  color: var(--black);
+}
+
+.text {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1em;
+  color: var(--gray);
+}
+
+header {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--gray);
+}
+
+.container-header {
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #6764ff; */
+}
+
+.logo{
+  width: 9em;
+  height: 4em;
+}
+
+.menu-header{
+  width: 1000px;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  /* background-color: rgb(237, 248, 141); */
+}
+
+.menu-header a{
+  color: var(--white); 
+  font-weight: bold;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+section{
+  min-height: 100vh;
+  padding-top: 7rem ;
+}
+
+#introduction{
+  background-color: rgb(61, 61, 61);
+}
+
+#skills{
+  background-color: rgb(121, 217, 255);
+}
+
+#projects{
+  background-color: rgb(255, 121, 121);
+}
+
+#about{
+  background-color: rgb(116, 255, 128);
+}
