@@ -1,0 +1,42 @@
+[
+  {
+    "name": "React",
+    "img": "ReactJs"
+  },
+  {
+    "name": "Node Js",
+    "img": "NodeJs"
+  },
+  {
+    "name": "Python",
+    "img": "Python"
+  },
+  {
+    "name": "Csharp",
+    "img": "Csharp"
+  },
+  {
+    "name": ".Net Core",
+    "img": "NetCore"
+  },
+  {
+    "name": "Figma",
+    "img": "Figma"
+  },
+  {
+    "name": "HTML",
+    "img": "HTML"
+  },
+  {
+    "name": "CSS",
+    "img": "CSS"
+  },
+  {
+    "name": "JavaScript",
+    "img": "JavaScript"
+  },
+  {
+    "name": "SQL Server",
+    "img": "SqlServer"
+  }
+]
