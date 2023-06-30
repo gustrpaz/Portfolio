@@ -12,6 +12,8 @@ import Avatar from '../../public/assets/Avatar.png'
 import GitHub from '../../public/assets/Github.svg'
 import Linkedin from '../../public/assets/Linkedin.svg'
 import Email from '../../public/assets/envelope.svg'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 import {
   ApolloClient,
   createHttpLink,
@@ -20,6 +22,9 @@ import {
 } from '@apollo/client'
 
 export default function Home() {
+  useEffect(() => {
+    Aos.init({ duration: 1500 })
+  }, [])
   // const [AvatarUrl, setAvatarUrl] = useState([])
   const [ListRepos, setListRepos] = useState([])
   const [showAllRepos, setShowAllRepos] = useState(false)
@@ -80,7 +85,7 @@ export default function Home() {
   }
   return (
     <>
-      <header>
+      <header data-aos="slide-down">
         <div className="wrapper container-header">
           <a href="#introduction">
             <Image className="logo" src={Logo} alt="Logo Rezende"></Image>
@@ -106,7 +111,7 @@ export default function Home() {
       <main>
         <section id="introduction">
           <div className="banner wrapper">
-            <div className="left">
+            <div className="left" data-aos="zoom-in">
               <div className="box-hello">
                 <Image className="emoji" src={Emoji} alt="Hand emoji"></Image>
                 <span className="text2 hello">Hello World!</span>
@@ -120,19 +125,24 @@ export default function Home() {
                 desenvolvimento das empresas.
               </p>
             </div>
-            <Image className="avatar" src={Avatar} alt="Avatar Rezende"></Image>
+            <Image
+              className="avatar"
+              src={Avatar}
+              alt="Avatar Rezende"
+              data-aos="zoom-in"
+            ></Image>
           </div>
         </section>
         <div className="hr"></div>
         <div className="wrapper">
           <section id="skills">
-            <div>
+            <div data-aos="zoom-in">
               <h1 className="subtitle">Skills</h1>
               <hr className="hrs hr1"></hr>
               <hr className="hrs hr2"></hr>
             </div>
             <div className="box-skills">
-              <div className="conteiner-skills tools">
+              <div className="conteiner-skills tools" data-aos="fade-right">
                 {jsonData.map((tool, index) => (
                   <div key={index} className="card text2">
                     <Image
@@ -145,7 +155,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <div className="conteiner-skills area">
+              <div className="conteiner-skills area" data-aos="fade-left">
                 <div className="box-area">
                   <div className="box-area-text">
                     <div className="area-text">
@@ -170,7 +180,7 @@ export default function Home() {
             </div>
           </section>
           <section id="projects">
-            <div>
+            <div data-aos="fade-right">
               <h1 className="subtitle">Meus Projetos</h1>
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
@@ -179,6 +189,7 @@ export default function Home() {
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
                   <Image
+                    data-aos="fade-right"
                     className="img-project"
                     src={`${url}/assets/${item.name}.png`}
                     alt={item.name}
@@ -186,24 +197,25 @@ export default function Home() {
                     height={320}
                     style={{ borderRadius: '30px' }}
                   ></Image>
-                  <div className="text-project">
+                  <div className="text-project" data-aos="fade-left">
                     <h3 className="contrast">{item.name}</h3>
                     <p className="text">{item.description}</p>
                     <Link href={item.url}>
-                      <button className="btn">Ver repositório</button>
+                      <button className="btn bg-slide">Ver repositório</button>
                     </Link>
                   </div>
                 </div>
               ) : (
                 <div key={item.id} className="project-content">
-                  <div className="text-project">
+                  <div className="text-project" data-aos="fade-right">
                     <h3 className="contrast">{item.name}</h3>
                     <p className="text">{item.description}</p>
                     <Link href={item.url}>
-                      <button className="btn">Ver repositório</button>
+                      <button className="btn bg-slide">Ver repositório</button>
                     </Link>
                   </div>
                   <Image
+                    data-aos="fade-left"
                     className="img-project"
                     src={`${url}/assets/${item.name}.png`}
                     alt={item.name}
@@ -214,27 +226,28 @@ export default function Home() {
                 </div>
               ),
             )}
-            <button className="see-more text2" onClick={toggleRepos}>
-              {showAllRepos ? 'Ver menos' : 'Ver mais'}
-            </button>
-            <hr className="hrs hr5"></hr>
+            <div className="box-see-more">
+              <button className="see-more text2" onClick={toggleRepos}>
+                {showAllRepos ? 'Ver menos' : 'Ver mais'}
+              </button>
+              <hr className="hrs hr5"></hr>
+            </div>
           </section>
-
           <section id="about">
             <div className="content-end">
-              <div>
+              <div data-aos="zoom-in">
                 <h2 className="subtitle">Sobre Mim</h2>
                 <hr className="hrs hr1"></hr>
                 <hr className="hrs hr2"></hr>
               </div>
-              <div>
+              <div data-aos="zoom-in">
                 <h2 className="subtitle">Contato</h2>
                 <hr className="hrs hr1"></hr>
                 <hr className="hrs hr2"></hr>
               </div>
             </div>
             <div className="content-end inside">
-              <div className="left-end">
+              <div className="left-end" data-aos="fade-right">
                 <div className="outline-photo">
                   <Image
                     // src={AvatarUrl}
@@ -261,14 +274,15 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="right-end">
+              <div className="right-end" data-aos="fade-left">
                 <Link className="link" href="https://github.com/gustrpaz">
-                  <button className="btn contact">
+                  <button className="btn bg-slide">
                     <Image
                       width={30}
                       height={30}
                       src={GitHub}
                       alt="Git Hub"
+                      className="svg"
                     ></Image>
                     GitHub
                   </button>
@@ -277,7 +291,7 @@ export default function Home() {
                   className="link"
                   href="https://www.linkedin.com/in/gustavo-rezende-paz/"
                 >
-                  <button className="btn contact">
+                  <button className="btn bg-slide">
                     <Image
                       width={30}
                       height={30}
@@ -288,7 +302,7 @@ export default function Home() {
                   </button>
                 </Link>
                 <Link className="link" href="mailto:grezendepaz@gmail.com">
-                  <button className="btn contact">
+                  <button className="btn contact bg-slide">
                     <Image
                       width={26}
                       height={26}

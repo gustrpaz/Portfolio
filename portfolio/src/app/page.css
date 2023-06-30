@@ -68,10 +68,44 @@
   border-style: none;
   cursor: pointer;
   font-family: 'Aclonica';
+  position: relative;
 
-  color: #1F1F1F;
+  /* color: var(--white); */
+  color: #181818;
   background: #FF5252;
   box-shadow: 0px 0px 20px rgba(255, 82, 82, 0.5);
+} 
+
+.btn.bg-slide::before{
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--white);
+  border-radius: 10px;
+  transition: transform 360ms ease-in-out;
+  transform:  scaleX(0);
+  /* transform-origin: left; */
+}
+
+.btn:hover::before,
+.btn:focus::before{
+  transform: scaleX(1);
+}
+.btn.bg-slide{
+  transition: transform 360ms ease-in-out;
+  transition: all .4s ease-in-out;
+  z-index:1;
+}
+
+.btn.bg-slide:hover,
+.btn.bg-slide:focus{
+  color: var(--red);
+  scale: 1.06;
+  transition: all .4s ease-in-out;
 }
 
 /* ----------------- */
@@ -88,6 +122,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: var(--gray);
+  z-index:99;
 }
 
 .container-header {
@@ -115,6 +150,16 @@ header {
   font-weight: bold;
   text-decoration: none;
   color: var(--white);
+}
+.menu-header li{
+  transition: all .2s ease-in-out;
+}
+.menu-header a:hover,
+.menu-header li:hover{
+  scale: 1.06;
+  transition: all .2s ease-in-out;
+  color: var(--red);
+  text-shadow: 0px 0px 15px rgba(255, 82, 82, 0.5);
 }
 
 #introduction {
@@ -215,6 +260,7 @@ header {
   height: 15.6em;
   display: flex;
   align-items: center;
+  overflow: hidden;
   justify-content: space-between;
   /* background-color: var(--gray); */
 }
@@ -307,7 +353,7 @@ header {
   margin-top: 10rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   /* background-color: rgba(0, 2, 138, 0.767); */
 }
 
@@ -321,6 +367,7 @@ header {
 
 .project-content {
   width: 100%;
+  overflow: hidden;
   margin-top: 6rem;
   display: flex;
   justify-content: space-between;
@@ -340,12 +387,28 @@ header {
   width: 10.5em;
 }
 
-.see-more {
+.box-see-more{
+  display: flex;
+  width: 100%;
   margin-top: 5rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.see-more {
   background: none;
   border: none;
   cursor: pointer;
   color: var(--red);
+  transition: all .2s ease-in-out;
+}
+       
+.see-more:hover{
+    scale: 1.06;
+    transition: all .2s ease-in-out;
+    color: var(--white);
+    text-shadow: 0px 0px 15px rgba(255, 82, 82, 0.5);
 }
 
 .hr5 {
@@ -362,6 +425,7 @@ header {
 
 .content-end {
   display: flex;
+  overflow: hidden;
   justify-content: space-between;
 }
 
@@ -417,7 +481,7 @@ header {
   text-decoration: none;
 }
 
-.contact{
+.right-end button{
   width:  8.75em;
   display: flex;
   align-items: center;
