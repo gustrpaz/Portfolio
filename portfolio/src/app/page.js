@@ -99,7 +99,7 @@ export default function Home() {
             <div className="hamburguer hamburguerIcon"></div>
           </div>
           <div className={active ? 'menu menuOpen' : 'menu menuClose'}>
-            <nav className="list">
+            <nav id="nav">
               <ul className="listItems">
                 <li>
                   <a href="#about" onClick={ToggleMode}>
