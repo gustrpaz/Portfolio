@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { url } from './url'
 import { useEffect, useState } from 'react'
-import { setContext } from '@apollo/client/link/context'
 import jsonData from '../components/toolslist.json'
 import Logo from '../../public/assets/Logo.svg'
 import Emoji from '../../public/assets/Emoji.png'
@@ -12,6 +11,7 @@ import Avatar from '../../public/assets/Avatar.png'
 import GitHub from '../../public/assets/Github.svg'
 import Linkedin from '../../public/assets/Linkedin.svg'
 import Email from '../../public/assets/envelope.svg'
+import { setContext } from '@apollo/client/link/context'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import {
@@ -22,9 +22,6 @@ import {
 } from '@apollo/client'
 
 export default function Home() {
-  useEffect(() => {
-    Aos.init({ duration: 1500 })
-  }, [])
   // const [AvatarUrl, setAvatarUrl] = useState([])
   const [ListRepos, setListRepos] = useState([])
   const [showAllRepos, setShowAllRepos] = useState(false)
@@ -33,6 +30,7 @@ export default function Home() {
     setShowAllRepos(!showAllRepos)
   }
   useEffect(() => {
+    Aos.init({ duration: 1500 })
     GetStaticProps()
   }, [])
   const GetStaticProps = async () => {
@@ -83,6 +81,10 @@ export default function Home() {
       console.log(erro)
     }
   }
+  const [active, setMode] = useState(false)
+  const ToggleMode = () => {
+    setMode(!active)
+  }
   return (
     <>
       <header data-aos="slide-down">
@@ -90,22 +92,38 @@ export default function Home() {
           <a href="#introduction">
             <Image className="logo" src={Logo} alt="Logo Rezende"></Image>
           </a>
-          <nav>
-            <ul className="menu-header">
-              <li>
-                <a href="#about">Sobre mim</a>
-              </li>
-              <li>
-                <a href="#skills"> Skills</a>
-              </li>
-              <li>
-                <a href="#projects">Projetos</a>
-              </li>
-              <li>
-                <a href="#about">Contato</a>
-              </li>
-            </ul>
-          </nav>
+          <div
+            className={active ? 'icon iconActive' : 'icon'}
+            onClick={ToggleMode}
+          >
+            <div className="hamburguer hamburguerIcon"></div>
+          </div>
+          <div className={active ? 'menu menuOpen' : 'menu menuClose'}>
+            <nav className="list">
+              <ul className="listItems">
+                <li>
+                  <a href="#about" onClick={ToggleMode}>
+                    Sobre mim
+                  </a>
+                </li>
+                <li>
+                  <a href="#skills" onClick={ToggleMode}>
+                    Skills
+                  </a>
+                </li>
+                <li>
+                  <a href="#projects" onClick={ToggleMode}>
+                    Projetos
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" onClick={ToggleMode}>
+                    Contato
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </header>
       <main>
@@ -226,7 +244,7 @@ export default function Home() {
                 </div>
               ),
             )}
-            <div className="box-see-more">
+            <div className="box-see-more" data-aos="zoom-in">
               <button className="see-more text2" onClick={toggleRepos}>
                 {showAllRepos ? 'Ver menos' : 'Ver mais'}
               </button>
