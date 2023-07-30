@@ -16,7 +16,7 @@
 - Contato: Disponibilizo meus meios de contato para que interessados possam entrar em contato diretamente comigo.
 <br>
 
-## 🎨 Design: https://www.figma.com/file/ccykdUMqMatbxGlB6YggWf/Wireframes-Portf%C3%B3lio?type=design&node-id=101%3A2&mode=design&t=sIbDhV5pHYXnWVuI-1
+🎨 Design: https://www.figma.com/file/ccykdUMqMatbxGlB6YggWf/Wireframes-Portf%C3%B3lio?type=design&node-id=101%3A2&mode=design&t=sIbDhV5pHYXnWVuI-1
 
 ## ⚙️ Tecnologias 
 
