@@ -128,7 +128,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: #6764ff;  */
+  /* background-color: #6764ff; */
 }
 
 .logo {
@@ -200,6 +200,21 @@ header {
 .emoji {
   width: 2em;
   height: 2em;
+  animation: balanco 1s infinite;
+}
+
+@keyframes balanco {
+  0% {
+    transform: rotateZ(-15deg);
+  }
+
+  50% {
+    transform: rotateZ(20deg);
+  }
+
+  100% {
+    transform: rotateZ(-15deg);
+  }
 }
 
 .p {
@@ -219,8 +234,10 @@ header {
 }
 
 .avatar {
-  width: 31em;
-  height: 31em;
+  width: 30em;
+  height: 30em;
+  /* width: 33%;
+  height: 60%; */
 }
 
 .hr {
@@ -272,7 +289,7 @@ header {
 }
 
 .tools {
-  width: 62em;
+  width: 70%;
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -293,7 +310,7 @@ header {
 }
 
 .area {
-  width: 23em;
+  width: 25%;
   display: flex;
   align-items: center;
 }
@@ -334,16 +351,16 @@ header {
 
 .load div {
   height: 100%;
-  background: #FF5252;
   border-radius: 20px;
+  background: linear-gradient(90deg, #AB3C3C 0%, #E84646 64.06%, #FF5252 100%);
 }
 
 .front {
-  width: 16.7em;
+  width: 90%;
 }
 
 .back {
-  width: 13.3em;
+  width: 75%;
 }
 
 #projects {
@@ -366,6 +383,26 @@ header {
   display: flex;
   overflow: hidden;
   justify-content: space-between;
+}
+
+.project-content2 {
+  display: none;
+}
+
+.box-content {
+  width: 40%;
+  align-items: center;
+  display: flex;
+}
+
+.link-project {
+  width: 100%;
+  height: 100%;
+}
+
+.img-project {
+  height: 100%;
+  width: 100%;
 }
 
 .text-project {
@@ -443,6 +480,11 @@ header {
   background: linear-gradient(180deg, #7C0303 0%, #FF5252 100%);
 }
 
+.perfil-git {
+  width: 96%;
+  height: 96%;
+}
+
 .box-profile {
   width: 60%;
   height: 100%;
@@ -489,11 +531,164 @@ footer {
   background: linear-gradient(180deg, rgba(31, 31, 31, 0.40) 0%, rgba(88, 44, 44, 0.40) 29.17%, rgba(141, 56, 56, 0.40) 64.58%, rgba(255, 82, 82, 0.40) 100%);
 }
 
-/*  Responsive: +1024px - Computadores
-- @media(min-width: 1024px) - Tablets
-- @media(min-width: 768px) - Tablets
-- @media(min-width: 480px) - Smartphones
-- @media(min-width: 320px) - Smartphones */
+@media(max-width: 1560px) {
+  .wrapper {
+    max-width: 1360px;
+  }
+
+  .avatar {
+    width: 27em;
+    height: 27em;
+  }
+
+  .title {
+    font-size: 1.8em;
+  }
+
+  .subtitle {
+    font-size: 1.6em;
+  }
+
+  .contrast {
+    font-size: 1.4em;
+  }
+
+  .card {
+    width: 10em;
+  }
+
+}
+
+@media(max-width: 1440px) {
+  .wrapper {
+    max-width: 1240px;
+  }
+
+  .outline-photo {
+    width: 16em;
+    height: 16em;
+  }
+
+  .btn {
+    height: 2.3em;
+  }
+
+  .card {
+    width: 9em;
+  }
+}
+
+@media(max-width: 1270px) {
+  .wrapper {
+    max-width: 1080px;
+  }
+
+  .listItems {
+    width: 50em;
+  }
+
+  .logo {
+    width: 8em;
+  }
+
+  .title {
+    font-size: 1.7em;
+  }
+
+  .subtitle {
+    font-size: 1.6em;
+  }
+
+  .contrast {
+    font-size: 1.3em;
+  }
+
+  .card {
+    width: 7.8em;
+    height: 3.5em;
+  }
+
+  .tool-img {
+    width: 1.8em;
+    height: 1.8em;
+  }
+
+  .tool-name {
+    font-size: 0.9em;
+  }
+
+  .load {
+    width: 14.4em;
+  }
+
+  .text-project button {
+    margin-top: 0.8rem;
+  }
+
+  .box-profile {
+    width: 55%;
+  }
+}
+
+@media(max-width: 1100px) {
+  .wrapper {
+    max-width: 950px;
+  }
+
+  .avatar {
+    width: 24em;
+    height: 24em;
+  }
+
+  .title {
+    font-size: 1.6em;
+  }
+
+  .subtitle {
+    font-size: 1.5em;
+  }
+
+  .contrast {
+    font-size: 1.2em;
+  }
+
+  .listItems {
+    width: 44em;
+  }
+
+  #skills {
+    height: 30em;
+  }
+
+  .box-skills {
+    height: 21.6em;
+  }
+
+  .tools {
+    justify-content: left;
+  }
+
+  .card {
+    margin-left: 1rem;
+  }
+
+  .load {
+    width: 12em;
+  }
+
+  .text-project {
+    width: 43%;
+  }
+
+  .box-profile {
+    width: 54%;
+  }
+
+  .outline-photo {
+    width: 15em;
+    height: 15em;
+  }
+}
 
 @media(max-width: 1024px) {
 
@@ -559,8 +754,6 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 
-  /* ------------------------------- */
-
   .menu .listItems {
     width: 100%;
     height: 0px;
@@ -593,5 +786,371 @@ footer {
     justify-content: center;
     align-items: center;
     border-top: 2px solid rgba(88, 88, 88, 0.459);
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    font-size: 1.4em;
+  }
+
+  .contrast {
+    font-size: 1.1em;
+  }
+
+  .tools {
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 7em;
+  }
+
+  .tool-name {
+    font-size: 0.8em;
+  }
+
+  .box-profile {
+    width: 50%;
+  }
+
+  .right-end button {
+    width: 7.5em;
+  }
+}
+
+@media(max-width: 920px) {
+  .wrapper {
+    max-width: 800px;
+  }
+
+  .box-hello {
+    width: 10em;
+    height: 2.6em;
+  }
+
+  .title {
+    font-size: 1.3em;
+  }
+
+  .text2 {
+    font-size: 0.9em;
+  }
+
+  .load {
+    width: 10.5em;
+  }
+
+  #projects {
+    margin-top: 6rem;
+  }
+
+  .project-content {
+    margin-top: 4.5rem;
+  }
+
+  .card {
+    width: 7em;
+    margin-left: unset;
+  }
+
+  .outline-photo {
+    width: 13em;
+    height: 13em;
+  }
+
+  .left-end {
+    width: 69%;
+  }
+
+  .box-profile {
+    width: 58%;
+  }
+
+  .text {
+    font-size: 0.9em;
+  }
+}
+
+@media(max-width: 810px) {
+  .wrapper {
+    max-width: 750px;
+  }
+
+  .text-project button {
+    width: 9.5em;
+  }
+
+  .outline-photo {
+    width: 12.5em;
+    height: 12.5em;
+  }
+
+  .right-end button {
+    width: 6.7em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .emoji {
+    width: 1.7em;
+    height: 1.7em;
+  }
+
+  .left p {
+    padding-top: 1.5rem;
+  }
+
+  .avatar {
+    width: 22em;
+    height: 22em;
+  }
+
+}
+
+@media(max-width: 768px) {
+  .wrapper {
+    max-width: 700px;
+  }
+
+  .avatar {
+    width: 20em;
+    height: 20em;
+  }
+
+  .left {
+    width: 45%;
+  }
+
+  .title {
+    font-size: 1.3em;
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+  }
+
+  .contrast {
+    font-size: 1.1em;
+  }
+
+  .card {
+    width: 8em;
+  }
+
+  .load {
+    width: 9.5em;
+  }
+
+  .right-end {
+    width: 21%;
+  }
+
+  .box-profile {
+    width: 55%;
+  }
+}
+
+@media(max-width: 700px) {
+  .wrapper {
+    max-width: 600px;
+  }
+
+  .avatar {
+    display: none;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .load {
+    width: 7.5em;
+  }
+
+  .card {
+    width: 7em;
+  }
+
+  .left-end {
+    flex-direction: column;
+  }
+
+  .box-profile {
+    margin-top: 2rem;
+    width: 94%;
+  }
+}
+
+@media(max-width: 620px) {
+  .wrapper {
+    max-width: 550px;
+  }
+}
+
+@media(max-width: 560px) {
+  .wrapper {
+    max-width: 500px;
+  }
+
+  .load {
+    width: 6.6em;
+  }
+
+  .text2 {
+    font-size: 0.8em;
+  }
+
+}
+
+@media(max-width: 500px) {
+  .wrapper {
+    max-width: 400px;
+  }
+
+  .box-hello {
+    width: 9em;
+  }
+
+  #skills {
+    height: unset;
+  }
+
+  .box-skills {
+    flex-direction: column;
+    margin-top: 2rem;
+    height: unset;
+  }
+
+  .tools {
+    width: 100%;
+    height: 20em;
+  }
+
+  .area {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .box-area {
+    height: 8em;
+    justify-content: space-evenly;
+  }
+
+  .load {
+    width: 14.6em;
+  }
+
+  .hr1 {
+    width: 7.3em;
+  }
+
+  .project-content {
+    display: none;
+  }
+
+  .project-content2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box-content {
+    width: 100%;
+  }
+
+  .text-project {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .box-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .inside {
+    flex-direction: column;
+  }
+
+  .left-end {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-end {
+    width: 100%;
+    margin-top: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media(max-width: 440px) {
+  .wrapper {
+    max-width: 300px;
+  }
+
+  .tools {
+    height: 22em;
+  }
+
+  .logo {
+    width: 7em;
+  }
+
+  .hamburguer {
+    right: 16%;
+  }
+
+  .txt-btn {
+    display: none;
+  }
+
+  .right-end button {
+    width: 4em;
+  }
+}
+
+@media(max-width: 340px) {
+  .wrapper {
+    max-width: 280px;
+  }
+
+  .tool-img {
+    width: 2em;
+    height: 2em;
+  }
+
+  .text2 {
+    font-size: 1em;
+  }
+
+  .card {
+    width: 8em;
+    height: 3em;
+  }
+
+  .tools {
+    height: 50em;
+    justify-content: center;
+    align-items: normal;
+  }
+
+  .box-hello {
+    width: 10em;
+  }
+
+  .text2 {
+    font-size: 0.9em;
+  }
+}
+
+@media(max-width: 310px) {
+  .wrapper {
+    max-width: 260px;
   }
 }

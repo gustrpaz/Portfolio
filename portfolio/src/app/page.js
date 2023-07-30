@@ -11,6 +11,7 @@ import Avatar from '../../public/assets/Avatar.png'
 import GitHub from '../../public/assets/Github.svg'
 import Linkedin from '../../public/assets/Linkedin.svg'
 import Email from '../../public/assets/envelope.svg'
+import { Cursor, Typewriter } from 'react-simple-typewriter'
 import { setContext } from '@apollo/client/link/context'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
@@ -135,7 +136,23 @@ export default function Home() {
                 <span className="text2 hello">Hello World!</span>
               </div>
               <h1 className="title p">Sou o Gustavo Rezende</h1>
-              <h1 className="title s">Desenvolvedor FullStack</h1>
+              <h1 className="title s">
+                <Typewriter
+                  words={[
+                    'Desenvolvedor FullStack',
+                    'Designer',
+                    'Sistemas de Informação',
+                  ]}
+                  loop={true}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={100}
+                  delaySpeed={1500}
+                  cursorColor="white"
+                />
+              </h1>
+              <Cursor />
               <p className="text">
                 Apaixonado por tecnologia, tenho me dedicado constantemente aos
                 estudos na área da programação. Meu principal objetivo é
@@ -168,8 +185,9 @@ export default function Home() {
                       alt={tool.name}
                       width={38}
                       height={38}
+                      className="tool-img"
                     ></Image>
-                    {tool.name}
+                    <span className="tool-name">{tool.name}</span>
                   </div>
                 ))}
               </div>
@@ -206,15 +224,19 @@ export default function Home() {
             {displayedRepos.map((item) =>
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
-                  <Image
-                    data-aos="fade-right"
-                    className="img-project"
-                    src={`${url}/assets/${item.name}.png`}
-                    alt={item.name}
-                    width={570}
-                    height={320}
-                    style={{ borderRadius: '30px' }}
-                  ></Image>
+                  <div className="box-content">
+                    <Link className="link-project" href={item.url}>
+                      <Image
+                        className="img-project"
+                        data-aos="fade-right"
+                        src={`${url}/assets/${item.name}.png`}
+                        alt={item.name}
+                        width={570}
+                        height={320}
+                        style={{ borderRadius: '30px' }}
+                      ></Image>
+                    </Link>
+                  </div>
                   <div className="text-project" data-aos="fade-left">
                     <h3 className="contrast">{item.name}</h3>
                     <p className="text">{item.description}</p>
@@ -232,18 +254,46 @@ export default function Home() {
                       <button className="btn bg-slide">Ver repositório</button>
                     </Link>
                   </div>
-                  <Image
-                    data-aos="fade-left"
-                    className="img-project"
-                    src={`${url}/assets/${item.name}.png`}
-                    alt={item.name}
-                    width={570}
-                    height={320}
-                    style={{ borderRadius: '30px' }}
-                  ></Image>
+                  <div className="box-content">
+                    <Link className="link-project" href={item.url}>
+                      <Image
+                        className="img-project"
+                        data-aos="fade-left"
+                        src={`${url}/assets/${item.name}.png`}
+                        alt={item.name}
+                        width={570}
+                        height={320}
+                        style={{ borderRadius: '30px' }}
+                      ></Image>
+                    </Link>
+                  </div>
                 </div>
               ),
             )}
+            {displayedRepos.map((item) => (
+              <div key={item.id} className="project-content2">
+                <div className="box-content">
+                  <Link className="link-project" href={item.url}>
+                    <Image
+                      className="img-project"
+                      data-aos="fade-right"
+                      src={`${url}/assets/${item.name}.png`}
+                      alt={item.name}
+                      width={570}
+                      height={320}
+                      style={{ borderRadius: '30px' }}
+                    ></Image>
+                  </Link>
+                </div>
+                <div className="text-project" data-aos="fade-left">
+                  <h3 className="contrast">{item.name}</h3>
+                  <p className="text">{item.description}</p>
+                  <Link href={item.url}>
+                    <button className="btn bg-slide">Ver repositório</button>
+                  </Link>
+                </div>
+              </div>
+            ))}
             <div className="box-see-more" data-aos="zoom-in">
               <button className="see-more text2" onClick={toggleRepos}>
                 {showAllRepos ? 'Ver menos' : 'Ver mais'}
@@ -274,6 +324,7 @@ export default function Home() {
                     height={275}
                     style={{ borderRadius: '10px' }}
                     alt="Gustavo"
+                    className="perfil-git"
                   ></Image>
                 </div>
                 <div className="box-profile">
@@ -302,7 +353,7 @@ export default function Home() {
                       alt="Git Hub"
                       className="svg"
                     ></Image>
-                    GitHub
+                    <span className="txt-btn">GitHub</span>
                   </button>
                 </Link>
                 <Link
@@ -316,7 +367,7 @@ export default function Home() {
                       src={Linkedin}
                       alt="Linkedin"
                     ></Image>
-                    Linkedin
+                    <span className="txt-btn">Linkedin</span>
                   </button>
                 </Link>
                 <Link className="link" href="mailto:grezendepaz@gmail.com">
@@ -327,7 +378,7 @@ export default function Home() {
                       src={Email}
                       alt="Email"
                     ></Image>
-                    Email
+                    <span className="txt-btn">Email</span>
                   </button>
                 </Link>
               </div>
