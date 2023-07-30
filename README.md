@@ -12,7 +12,7 @@
 
 - Design Responsivo: Meu portfolio é acessível em várias plataformas, garantindo uma experiência consistente em dispositivos móveis, tablets e desktops.
 - Projetos Destacados: Destaco alguns dos meus projetos mais recentes e relevantes, permitindo que os visitantes explorem e interajam com eles.
-- Informações Pessoais: Apresento informações sobre mim, minha formação acadêmica, experiências profissionais e habilidades técnicas.
+- Informações Pessoais: Apresento informações sobre mim, minha formação acadêmica e habilidades técnicas.
 - Contato: Disponibilizo meus meios de contato para que interessados possam entrar em contato diretamente comigo.
 <br>
 
