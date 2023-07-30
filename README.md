@@ -8,37 +8,13 @@
 ## 📃 Sobre o projeto 
 <p>Este é o repositório do meu portfolio pessoal, construído com as tecnologias React.js e Next.js. Nele, apresento uma coleção dos meus projetos, habilidades e experiências relevantes.</p>
 
-Recursos
+## Recursos
 
-    Design Responsivo: Meu portfolio é acessível em várias plataformas, garantindo uma experiência consistente em dispositivos móveis, tablets e desktops.
-
-    Páginas Dinâmicas: Aproveitando a funcionalidade do Next.js, o site possui carregamento rápido entre páginas e otimização para SEO.
-
-    Projetos Destacados: Destaco alguns dos meus projetos mais recentes e relevantes, permitindo que os visitantes explorem e interajam com eles.
-
-    Informações Pessoais: Apresento informações sobre mim, minha formação acadêmica, experiências profissionais e habilidades técnicas.
-
-    Contato: Disponibilizo meus meios de contato para que interessados possam entrar em contato diretamente comigo.
+- Design Responsivo: Meu portfolio é acessível em várias plataformas, garantindo uma experiência consistente em dispositivos móveis, tablets e desktops.
+- Projetos Destacados: Destaco alguns dos meus projetos mais recentes e relevantes, permitindo que os visitantes explorem e interajam com eles.
+- Informações Pessoais: Apresento informações sobre mim, minha formação acadêmica, experiências profissionais e habilidades técnicas.
+- Contato: Disponibilizo meus meios de contato para que interessados possam entrar em contato diretamente comigo.
 <br>
-Como executar o projeto localmente
-
-    Certifique-se de ter o Node.js instalado em seu computador.
-
-    Faça o clone deste repositório em sua máquina local.
-
-    Acesse a pasta do projeto e instale as dependências utilizando o comando:
-
-bash
-
-npm install
-
-    Agora, inicie o servidor de desenvolvimento com o seguinte comando:
-
-bash
-
-npm run dev
-
-    O projeto estará disponível em http://localhost:3000. Acesse este URL em seu navegador para visualizar o portfolio.
 
 
 Obrigado por visitar meu portfolio! Espero que goste dos projetos que apresento aqui. Se tiver alguma dúvida ou quiser trocar ideias, não hesite em entrar em contato. Happy coding! 😄
