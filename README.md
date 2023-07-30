@@ -16,9 +16,7 @@
 - Contato: Disponibilizo meus meios de contato para que interessados possam entrar em contato diretamente comigo.
 <br>
 
-
-Obrigado por visitar meu portfolio! Espero que goste dos projetos que apresento aqui. Se tiver alguma dúvida ou quiser trocar ideias, não hesite em entrar em contato. Happy coding! 😄
-
+- Link do design: https://www.figma.com/file/ccykdUMqMatbxGlB6YggWf/Wireframes-Portf%C3%B3lio?type=design&node-id=101%3A2&mode=design&t=sIbDhV5pHYXnWVuI-1
 
 ## ⚙️ Tecnologias 
 
@@ -32,3 +30,6 @@ Obrigado por visitar meu portfolio! Espero que goste dos projetos que apresento 
 ## ✉️ Contato 
 <a href="https://www.linkedin.com/in/gustavo-rezende-paz/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></img></a>
 <a href="mailto:grezendepaz@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></img></a>
+
+<br> 
+Obrigado por visitar meu portfolio! Espero que goste dos projetos que apresento aqui. Se tiver alguma dúvida ou quiser trocar ideias, não hesite em entrar em contato. Happy coding! 😄
