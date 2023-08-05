@@ -385,6 +385,10 @@ header {
   justify-content: space-between;
 }
 
+.text-project a{
+  margin-top: 1rem
+}
+
 .project-content2 {
   display: none;
 }
