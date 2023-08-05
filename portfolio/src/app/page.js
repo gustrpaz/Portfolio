@@ -226,7 +226,7 @@ export default function Home() {
                 <div key={item.id} className="project-content">
                   <div className="box-content">
                     <Link className="link-project" href={item.url}>
-                      <Image
+                      <img
                         className="img-project"
                         data-aos="fade-right"
                         src={`${url}/assets/${item.name}.png`}
@@ -234,7 +234,7 @@ export default function Home() {
                         width={570}
                         height={320}
                         style={{ borderRadius: '30px' }}
-                      ></Image>
+                      ></img>
                     </Link>
                   </div>
                   <div className="text-project" data-aos="fade-left">
@@ -256,7 +256,7 @@ export default function Home() {
                   </div>
                   <div className="box-content">
                     <Link className="link-project" href={item.url}>
-                      <Image
+                      <img
                         className="img-project"
                         data-aos="fade-left"
                         src={`${url}/assets/${item.name}.png`}
@@ -264,7 +264,7 @@ export default function Home() {
                         width={570}
                         height={320}
                         style={{ borderRadius: '30px' }}
-                      ></Image>
+                      ></img>
                     </Link>
                   </div>
                 </div>
