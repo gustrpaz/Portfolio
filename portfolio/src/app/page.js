@@ -259,7 +259,8 @@ export default function Home() {
                       <Image
                         className="img-project"
                         data-aos="fade-left"
-                        src={`${url}/assets/${item.name}.png`}
+                        // src={`${url}/assets/${item.name}.png`}
+                        src="https://pt.best-wallpaper.net/wallpaper/2560x1600/1212/Beautiful-nature-landscape-lake-mountains-trees-village-blue-sky-white-clouds_2560x1600.jpg"
                         alt={item.name}
                         width={570}
                         height={320}
