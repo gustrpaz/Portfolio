@@ -4,7 +4,8 @@
 
 <img src="https://i.imgur.com/AToTgbJ.png"></img>
 
-https://portfoliorezende.netfly.app/
+## Link do repositório
+<p>https://portfoliorezende.netfly.app/</p>
 
 ## 📃 Sobre o projeto 
 <p>Este é o repositório do meu portfolio pessoal, construído com as tecnologias React.js e Next.js. Nele, apresento uma coleção dos meus projetos, habilidades e experiências relevantes.</p>
