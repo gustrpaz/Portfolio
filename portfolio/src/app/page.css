@@ -1157,10 +1157,18 @@ footer {
   .text2 {
     font-size: 0.9em;
   }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  .card{
+    width: 8em;
+  }
 }
 
 @media(max-width: 310px) {
   .wrapper {
-    max-width: 260px;
+    max-width: 280px;
   }
 }
