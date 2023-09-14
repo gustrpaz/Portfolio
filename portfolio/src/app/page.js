@@ -234,9 +234,9 @@ export default function Home() {
                         width={570}
                         height={320}
                         style={{ borderRadius: '30px' }}
-                        onError={(e) =>
-                          (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        }
+                        // onError={(e) =>
+                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                        // }
                       ></img>
                     </Link>
                   </div>
@@ -267,9 +267,9 @@ export default function Home() {
                         width={570}
                         height={320}
                         style={{ borderRadius: '30px' }}
-                        onError={(e) =>
-                          (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        }
+                        // onError={(e) =>
+                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                        // }
                       ></img>
                     </Link>
                   </div>
