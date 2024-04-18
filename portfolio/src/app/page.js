@@ -245,6 +245,7 @@ export default function Home() {
                     <Link className="link-project" href={item.url}>
                       {jsonProject.map((project) => (
                         <img
+                          key={project.id}
                           className="img-project"
                           data-aos="fade-right"
                           src={project.url}
