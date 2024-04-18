@@ -237,6 +237,7 @@ export default function Home() {
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
             </div>
+            <img src="https://i.ibb.co/VJd0WF0/Bots4RPA.png"></img>
             {displayedRepos.map((item) =>
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
