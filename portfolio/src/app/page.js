@@ -234,7 +234,7 @@ export default function Home() {
           </section>
           <section id="projects">
             <div data-aos="fade-right">
-              {jsonProject.map((project) => (
+              {/* {jsonProject.map((project) => (
                 <img
                   key={project.id}
                   className="img-project"
@@ -245,7 +245,7 @@ export default function Home() {
                   height={320}
                   style={{ borderRadius: '30px' }}
                 />
-              ))}
+              ))} */}
               <h1 className="subtitle">Meus Projetos</h1>
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
@@ -254,20 +254,20 @@ export default function Home() {
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
                   <div className="box-content">
-                    <Link className="link-project" href={item.url}>
-                      {/* {jsonProject.map((project) => (
-                        <img
-                          key={project.id}
-                          className="img-project"
-                          data-aos="fade-right"
-                          src={project.url}
-                          alt={project.name}
-                          width={570}
-                          height={320}
-                          style={{ borderRadius: '30px' }}
-                        />
-                      ))} */}
-                    </Link>
+                    {/* <Link className="link-project" href={item.url}> */}
+                    <img
+                      className="img-project"
+                      data-aos="fade-left"
+                      src={`${url}/assets/${item.name}.png`}
+                      alt={item.name}
+                      width={570}
+                      height={320}
+                      style={{ borderRadius: '30px' }}
+                      // onError={(e) =>
+                      //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                      // }
+                    />
+                    {/* </Link> */}
                   </div>
                   <div className="text-project" data-aos="fade-left">
                     <h3 className="contrast">{item.name}</h3>
@@ -287,20 +287,20 @@ export default function Home() {
                     </Link>
                   </div>
                   <div className="box-content">
-                    <Link className="link-project" href={item.url}>
-                      <img
-                        className="img-project"
-                        data-aos="fade-left"
-                        src={`${url}/assets/${item.name}.png`}
-                        alt={item.name}
-                        width={570}
-                        height={320}
-                        style={{ borderRadius: '30px' }}
-                        // onError={(e) =>
-                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        // }
-                      />
-                    </Link>
+                    {/* <Link className="link-project" href={item.url}> */}
+                    <img
+                      className="img-project"
+                      data-aos="fade-left"
+                      src={`${url}/assets/${item.name}.png`}
+                      alt={item.name}
+                      width={570}
+                      height={320}
+                      style={{ borderRadius: '30px' }}
+                      // onError={(e) =>
+                      //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                      // }
+                    />
+                    {/* </Link> */}
                   </div>
                 </div>
               ),
