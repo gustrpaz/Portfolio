@@ -22,6 +22,8 @@ import {
   gql,
 } from '@apollo/client'
 
+import imersao from '../../public/assets/ImersaoDev_Alura.png'
+
 export default function Home() {
   // const [AvatarUrl, setAvatarUrl] = useState([])
   const [ListRepos, setListRepos] = useState([])
@@ -226,7 +228,19 @@ export default function Home() {
                 <div key={item.id} className="project-content">
                   <div className="box-content">
                     <Link className="link-project" href={item.url}>
-                      {/* <img
+                      <Image
+                        className="img-project"
+                        data-aos="fade-right"
+                        src={imersao}
+                        alt={item.name}
+                        width={570}
+                        height={320}
+                        style={{ borderRadius: '30px' }}
+                        // onError={(e) =>
+                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                        // }
+                      ></Image>
+                      {/* <Image
                         className="img-project"
                         data-aos="fade-right"
                         src={`${url}/assets/${item.name}.png`}
@@ -237,19 +251,7 @@ export default function Home() {
                         // onError={(e) =>
                         //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
                         // }
-                      ></img> */}
-                      <Image
-                        className="img-project"
-                        data-aos="fade-right"
-                        src={require`${url}/assets/${item.name}.png`}
-                        alt={item.name}
-                        width={570}
-                        height={320}
-                        style={{ borderRadius: '30px' }}
-                        // onError={(e) =>
-                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        // }
-                      ></Image>
+                      ></Image> */}
                     </Link>
                   </div>
                   <div className="text-project" data-aos="fade-left">
