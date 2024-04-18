@@ -23,21 +23,21 @@ import {
   gql,
 } from '@apollo/client'
 
-const getImageUrl = (name) => {
-  // Mapeie o nome do projeto para sua URL correspondente
-  switch (name) {
-    case 'ImersaoDev_Alura':
-      return 'https://i.ibb.co/Z86sGDX/Imersao-Dev-Alura.png'
-    case 'Bots4RPA':
-      return 'https://i.ibb.co/VJd0WF0/Bots4RPA.png'
-    case 'NLWSpacetime':
-      return 'https://i.ibb.co/vdjRXHX/NLWSpacetime.png'
-    case 'spmedical':
-      return 'https://i.ibb.co/hBzs2rv/spmedical.png'
-    default:
-      return '' // Retornar uma URL padrão ou vazia se o nome do projeto não for reconhecido
-  }
-}
+// const getImageUrl = (name) => {
+//   // Mapeie o nome do projeto para sua URL correspondente
+//   switch (name) {
+//     case 'ImersaoDev_Alura':
+//       return 'https://i.ibb.co/Z86sGDX/Imersao-Dev-Alura.png'
+//     case 'Bots4RPA':
+//       return 'https://i.ibb.co/VJd0WF0/Bots4RPA.png'
+//     case 'NLWSpacetime':
+//       return 'https://i.ibb.co/vdjRXHX/NLWSpacetime.png'
+//     case 'spmedical':
+//       return 'https://i.ibb.co/hBzs2rv/spmedical.png'
+//     default:
+//       return '' // Retornar uma URL padrão ou vazia se o nome do projeto não for reconhecido
+//   }
+// }
 
 export default function Home() {
   // const [AvatarUrl, setAvatarUrl] = useState([])
