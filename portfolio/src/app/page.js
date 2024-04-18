@@ -22,7 +22,21 @@ import {
   gql,
 } from '@apollo/client'
 
-import imersao from '../../public/assets/ImersaoDev_Alura.png'
+const getImageUrl = (name) => {
+  // Mapeie o nome do projeto para sua URL correspondente
+  switch (name) {
+    case 'ImersaoDev_Alura':
+      return 'https://i.ibb.co/Z86sGDX/Imersao-Dev-Alura.png'
+    case 'Bots4RPA':
+      return 'https://i.ibb.co/VJd0WF0/Bots4RPA.png'
+    case 'NLWSpacetime':
+      return 'https://i.ibb.co/vdjRXHX/NLWSpacetime.png'
+    case 'spmedical':
+      return 'https://i.ibb.co/hBzs2rv/spmedical.png'
+    default:
+      return '' // Retornar uma URL padrão ou vazia se o nome do projeto não for reconhecido
+  }
+}
 
 export default function Home() {
   // const [AvatarUrl, setAvatarUrl] = useState([])
@@ -223,16 +237,15 @@ export default function Home() {
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
             </div>
-            <img src="https://i.pinimg.com/736x/bc/ff/c0/bcffc0b1ee61e7f500435017995cd9dd.jpg"></img>
             {displayedRepos.map((item) =>
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
                   <div className="box-content">
                     <Link className="link-project" href={item.url}>
-                      <Image
+                      <img
                         className="img-project"
                         data-aos="fade-right"
-                        src={imersao}
+                        src={getImageUrl(item.name)}
                         alt={item.name}
                         width={570}
                         height={320}
@@ -240,7 +253,7 @@ export default function Home() {
                         // onError={(e) =>
                         //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
                         // }
-                      ></Image>
+                      ></img>
                       {/* <Image
                         className="img-project"
                         data-aos="fade-right"
