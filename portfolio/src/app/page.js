@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { url } from './url'
 import { useEffect, useState } from 'react'
 import jsonData from '../components/toolslist.json'
+import jsonProject from '../components/projects.json'
 import Logo from '../../public/assets/Logo.svg'
 import Emoji from '../../public/assets/Emoji.png'
 import Avatar from '../../public/assets/Avatar.png'
@@ -237,36 +238,22 @@ export default function Home() {
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
             </div>
-            <img src="https://i.ibb.co/VJd0WF0/Bots4RPA.png"></img>
             {displayedRepos.map((item) =>
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
                   <div className="box-content">
                     <Link className="link-project" href={item.url}>
-                      <img
-                        className="img-project"
-                        data-aos="fade-right"
-                        src={getImageUrl(item.name)}
-                        alt={item.name}
-                        width={570}
-                        height={320}
-                        style={{ borderRadius: '30px' }}
-                        // onError={(e) =>
-                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        // }
-                      ></img>
-                      {/* <Image
-                        className="img-project"
-                        data-aos="fade-right"
-                        src={`${url}/assets/${item.name}.png`}
-                        alt={item.name}
-                        width={570}
-                        height={320}
-                        style={{ borderRadius: '30px' }}
-                        // onError={(e) =>
-                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        // }
-                      ></Image> */}
+                      {jsonProject.map((project) => (
+                        <img
+                          className="img-project"
+                          data-aos="fade-right"
+                          src={project.url}
+                          alt={project.name}
+                          width={570}
+                          height={320}
+                          style={{ borderRadius: '30px' }}
+                        />
+                      ))}
                     </Link>
                   </div>
                   <div className="text-project" data-aos="fade-left">
@@ -299,7 +286,7 @@ export default function Home() {
                         // onError={(e) =>
                         //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
                         // }
-                      ></img>
+                      />
                     </Link>
                   </div>
                 </div>
