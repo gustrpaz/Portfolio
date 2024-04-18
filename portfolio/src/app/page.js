@@ -223,6 +223,7 @@ export default function Home() {
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
             </div>
+            <Image src={`${url}/assets/NLWSpacetime.png`}></Image>
             {displayedRepos.map((item) =>
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
