@@ -234,18 +234,6 @@ export default function Home() {
           </section>
           <section id="projects">
             <div data-aos="fade-right">
-              {/* {jsonProject.map((project) => (
-                <img
-                  key={project.id}
-                  className="img-project"
-                  data-aos="fade-right"
-                  src={project.url}
-                  alt={project.name}
-                  width={570}
-                  height={320}
-                  style={{ borderRadius: '30px' }}
-                />
-              ))} */}
               <h1 className="subtitle">Meus Projetos</h1>
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
@@ -263,23 +251,17 @@ export default function Home() {
                     height={300}
                     style={{ borderRadius: '30px' }}
                   />
-                  {displayedRepos
-                    .filter((item) => item.name === project.name)
-                    .map((filteredItem, index) => (
-                      <div
-                        key={index}
-                        className="text-project"
-                        data-aos="fade-left"
-                      >
-                        <h3 className="contrast">{filteredItem.name}</h3>
-                        <p className="text">{filteredItem.description}</p>
-                        <Link href={filteredItem.url}>
-                          <button className="btn bg-slide">
-                            Ver repositório
-                          </button>
-                        </Link>
-                      </div>
-                    ))}
+                </div>
+              ))}
+            {displayedRepos
+              .filter((item) => item.name === 'NLWSpacetime')
+              .map((filteredItem, index) => (
+                <div key={index} className="text-project" data-aos="fade-left">
+                  <h3 className="contrast">{filteredItem.name}</h3>
+                  <p className="text">{filteredItem.description}</p>
+                  <Link href={filteredItem.url}>
+                    <button className="btn bg-slide">Ver repositório</button>
+                  </Link>
                 </div>
               ))}
             {
