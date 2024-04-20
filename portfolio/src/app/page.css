@@ -383,6 +383,7 @@ header {
   display: flex;
   overflow: hidden;
   justify-content: space-between;
+  /* background-color: gray; */
 }
 
 .text-project a{

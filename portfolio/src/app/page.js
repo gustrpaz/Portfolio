@@ -253,61 +253,65 @@ export default function Home() {
             {jsonProject
               .filter((project) => project.name === 'NLWSpacetime')
               .map((project) => (
-                <img
-                  key={project.id}
-                  className="img-project"
-                  data-aos="fade-right"
-                  src={project.url}
-                  alt={project.name}
-                  width={570}
-                  height={320}
-                  style={{ borderRadius: '30px' }}
-                />
+                <div key={project.id} className="project-content">
+                  <img
+                    // className="img-project"
+                    data-aos="fade-right"
+                    src={project.url}
+                    alt={project.name}
+                    width={500}
+                    height={300}
+                    style={{ borderRadius: '30px' }}
+                  />
+                  {displayedRepos
+                    .filter((item) => item.name === project.name)
+                    .map((filteredItem, index) => (
+                      <div
+                        key={index}
+                        className="text-project"
+                        data-aos="fade-left"
+                      >
+                        <h3 className="contrast">{filteredItem.name}</h3>
+                        <p className="text">{filteredItem.description}</p>
+                        <Link href={filteredItem.url}>
+                          <button className="btn bg-slide">
+                            Ver repositório
+                          </button>
+                        </Link>
+                      </div>
+                    ))}
+                </div>
               ))}
-            {displayedRepos.map((item) =>
-              displayedRepos.indexOf(item) % 2 === 0 ? (
-                <div key={item.id} className="project-content">
-                  <div className="box-content">
-                    {/* <Link className="link-project" href={item.url}> */}
-                    {/* </Link> */}
-                  </div>
-                  <div className="text-project" data-aos="fade-left">
-                    <h3 className="contrast">{item.name}</h3>
-                    <p className="text">{item.description}</p>
-                    <Link href={item.url}>
-                      <button className="btn bg-slide">Ver repositório</button>
-                    </Link>
-                  </div>
-                </div>
-              ) : (
-                <div key={item.id} className="project-content">
-                  <div className="text-project" data-aos="fade-right">
-                    <h3 className="contrast">{item.name}</h3>
-                    <p className="text">{item.description}</p>
-                    <Link href={item.url}>
-                      <button className="btn bg-slide">Ver repositório</button>
-                    </Link>
-                  </div>
-                  <div className="box-content">
-                    {/* <Link className="link-project" href={item.url}> */}
-                    <img
-                      className="img-project"
-                      data-aos="fade-left"
-                      src={`${url}/assets/${item.name}.png`}
-                      alt={item.name}
-                      width={570}
-                      height={320}
-                      style={{ borderRadius: '30px' }}
-                      // onError={(e) =>
-                      //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                      // }
-                    />
-                    {/* </Link> */}
-                  </div>
-                </div>
-              ),
-            )}
-            {displayedRepos.map((item) => (
+            {
+              /* ) : (
+                 <div key={item.id} className="project-content">
+                   <div className="text-project" data-aos="fade-right">
+                     <h3 className="contrast">{item.name}</h3>
+                     <p className="text">{item.description}</p>
+                     <Link href={item.url}>
+                       <button className="btn bg-slide">Ver repositório</button>
+                     </Link>
+                   </div>
+                   <div className="box-content">
+                   <Link className="link-project" href={item.url}> 
+                     <img */
+              //           className="img-project"
+              //           data-aos="fade-left"
+              //           src={`${url}/assets/${item.name}.png`}
+              //           alt={item.name}
+              //           width={570}
+              //           height={320}
+              //           style={{ borderRadius: '30px' }}
+              //           // onError={(e) =>
+              //           //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+              //           // }
+              //         />
+              //         {/* </Link> */}
+              //       </div>
+              //     </div>
+              //   ),
+              // )}
+              /* {displayedRepos.map((item) => (
               <div key={item.id} className="project-content2">
                 <div className="box-content">
                   <Link className="link-project" href={item.url}>
@@ -330,7 +334,8 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-            ))}
+            ))} */
+            }
             <div className="box-see-more" data-aos="zoom-in">
               <button className="see-more text2" onClick={toggleRepos}>
                 {showAllRepos ? 'Ver menos' : 'Ver mais'}
