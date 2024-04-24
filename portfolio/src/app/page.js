@@ -247,8 +247,8 @@ export default function Home() {
                     data-aos="fade-right"
                     src={project.url}
                     alt={project.name}
-                    width={500}
-                    height={300}
+                    // width={500}
+                    // height={300}
                     style={{ borderRadius: '30px' }}
                   />
                 </div>
