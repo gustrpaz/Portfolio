@@ -226,22 +226,10 @@ export default function Home() {
                 <div key={item.id} className="project-content">
                   <div className="box-content">
                     <Link className="link-project" href={item.url}>
-                      {/* <img
-                        className="img-project"
-                        data-aos="fade-right"
-                        src={`${url}/assets/${item.name}.png`}
-                        alt={item.name}
-                        width={570}
-                        height={320}
-                        style={{ borderRadius: '30px' }}
-                        // onError={(e) =>
-                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        // }
-                      ></img> */}
                       <Image
                         className="img-project"
                         data-aos="fade-right"
-                        src={`${url}/assets/porsche.png`}
+                        src={`${url}/assets/${item.name}.png`}
                         alt={item.name}
                         width={570}
                         height={320}
@@ -271,7 +259,7 @@ export default function Home() {
                   </div>
                   <div className="box-content">
                     <Link className="link-project" href={item.url}>
-                      <img
+                      <Image
                         className="img-project"
                         data-aos="fade-left"
                         src={`${url}/assets/${item.name}.png`}
@@ -282,7 +270,7 @@ export default function Home() {
                         // onError={(e) =>
                         //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
                         // }
-                      ></img>
+                      ></Image>
                     </Link>
                   </div>
                 </div>
