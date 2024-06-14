@@ -225,20 +225,20 @@ export default function Home() {
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
                   <div className="box-content">
-                    <Link className="link-project" href={item.url}>
-                      <Image
-                        className="img-project"
-                        data-aos="fade-right"
-                        src={`${url}/assets/${item.name}.png`}
-                        alt={item.name}
-                        width={570}
-                        height={320}
-                        style={{ borderRadius: '30px' }}
-                        // onError={(e) =>
-                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        // }
-                      ></Image>
-                    </Link>
+                    {/* <Link className="link-project" href={item.url}> */}
+                    <Image
+                      className="img-project"
+                      data-aos="fade-right"
+                      src={`${url}/assets/${item.name}.png`}
+                      alt={item.name}
+                      width={570}
+                      height={320}
+                      style={{ borderRadius: '30px' }}
+                      // onError={(e) =>
+                      //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                      // }
+                    ></Image>
+                    {/* </Link> */}
                   </div>
                   <div className="text-project" data-aos="fade-left">
                     <h3 className="contrast">{item.name}</h3>
