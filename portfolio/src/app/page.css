@@ -1060,7 +1060,7 @@ footer {
   }
 
   .project-content {
-    display: none;
+    /* display: none; */
   }
 
   .project-content2 {
