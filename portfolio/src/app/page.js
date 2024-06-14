@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { url } from './url'
 import { useEffect, useState } from 'react'
+import Teste from '../..//public/assets/ImersaoDev_Alura.png'
 import jsonData from '../components/toolslist.json'
 import Logo from '../../public/assets/Logo.svg'
 import Emoji from '../../public/assets/Emoji.png'
@@ -229,7 +230,8 @@ export default function Home() {
                     <Image
                       className="img-project"
                       data-aos="fade-right"
-                      src={`${url}/assets/${item.name}.png`}
+                      src={Teste}
+                      // src={`${url}/assets/${item.name}.png`}
                       alt={item.name}
                       width={570}
                       height={320}
