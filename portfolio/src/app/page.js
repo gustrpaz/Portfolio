@@ -223,7 +223,34 @@ export default function Home() {
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
             </div>
-            <div key="1" className="project-content">
+            <div className="project-content">
+              <div className="box-content">
+                <Image
+                  className="img-project"
+                  data-aos="fade-right"
+                  src={Teste}
+                  alt="teste"
+                  width={570}
+                  height={320}
+                  style={{ borderRadius: '30px' }}
+                ></Image>
+              </div>
+              <div className="text-project" data-aos="fade-left">
+                <h3 className="contrast">ImersãoDev Alura</h3>
+                <p className="text">
+                  Desafios realizados durante a 6º edição da Imersão Dev, na
+                  qual houveram 5 aulas com os professores Guilherme Lima,
+                  Rafaella Ballerini e Paulo Silveira que proporcionaram ótimas
+                  experiências e desafios direcionados a desenvolvimento web.
+                  Aproveitei para aprimorar os meus conhecimentos em HTML, CSS e
+                  Java Script que foram as tecnologias utilizadas.
+                </p>
+                <Link href="https://github.com/gustrpaz/ImersaoDev_Alura">
+                  <button className="btn bg-slide">Ver repositório</button>
+                </Link>
+              </div>
+            </div>
+            <div className="project-content2">
               <div className="box-content">
                 <Image
                   className="img-project"
