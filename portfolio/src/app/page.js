@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { url } from './url'
 import { useEffect, useState } from 'react'
 import jsonData from '../components/toolslist.json'
-import jsonProject from '../components/projects.json'
 import Logo from '../../public/assets/Logo.svg'
 import Emoji from '../../public/assets/Emoji.png'
 import Avatar from '../../public/assets/Avatar.png'
@@ -22,22 +21,6 @@ import {
   InMemoryCache,
   gql,
 } from '@apollo/client'
-
-// const getImageUrl = (name) => {
-//   // Mapeie o nome do projeto para sua URL correspondente
-//   switch (name) {
-//     case 'ImersaoDev_Alura':
-//       return 'https://i.ibb.co/Z86sGDX/Imersao-Dev-Alura.png'
-//     case 'Bots4RPA':
-//       return 'https://i.ibb.co/VJd0WF0/Bots4RPA.png'
-//     case 'NLWSpacetime':
-//       return 'https://i.ibb.co/vdjRXHX/NLWSpacetime.png'
-//     case 'spmedical':
-//       return 'https://i.ibb.co/hBzs2rv/spmedical.png'
-//     default:
-//       return '' // Retornar uma URL padrão ou vazia se o nome do projeto não for reconhecido
-//   }
-// }
 
 export default function Home() {
   // const [AvatarUrl, setAvatarUrl] = useState([])
@@ -238,62 +221,74 @@ export default function Home() {
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
             </div>
-            {jsonProject
-              .filter((project) => project.name === 'NLWSpacetime')
-              .map((project) => (
-                <div key={project.id} className="project-content">
-                  <img
-                    // className="img-project"
-                    data-aos="fade-right"
-                    src={project.url}
-                    alt={project.name}
-                    // width={500}
-                    // height={300}
-                    style={{ borderRadius: '30px' }}
-                  />
+            {displayedRepos.map((item) =>
+              displayedRepos.indexOf(item) % 2 === 0 ? (
+                <div key={item.id} className="project-content">
+                  <div className="box-content">
+                    <Link className="link-project" href={item.url}>
+                      {/* <img
+                        className="img-project"
+                        data-aos="fade-right"
+                        src={`${url}/assets/${item.name}.png`}
+                        alt={item.name}
+                        width={570}
+                        height={320}
+                        style={{ borderRadius: '30px' }}
+                        // onError={(e) =>
+                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                        // }
+                      ></img> */}
+                      <Image
+                        className="img-project"
+                        data-aos="fade-right"
+                        src={`${url}/assets/porsche.png`}
+                        alt={item.name}
+                        width={570}
+                        height={320}
+                        style={{ borderRadius: '30px' }}
+                        // onError={(e) =>
+                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                        // }
+                      ></Image>
+                    </Link>
+                  </div>
+                  <div className="text-project" data-aos="fade-left">
+                    <h3 className="contrast">{item.name}</h3>
+                    <p className="text">{item.description}</p>
+                    <Link href={item.url}>
+                      <button className="btn bg-slide">Ver repositório</button>
+                    </Link>
+                  </div>
                 </div>
-              ))}
-            {displayedRepos
-              .filter((item) => item.name === 'NLWSpacetime')
-              .map((filteredItem, index) => (
-                <div key={index} className="text-project" data-aos="fade-left">
-                  <h3 className="contrast">{filteredItem.name}</h3>
-                  <p className="text">{filteredItem.description}</p>
-                  <Link href={filteredItem.url}>
-                    <button className="btn bg-slide">Ver repositório</button>
-                  </Link>
+              ) : (
+                <div key={item.id} className="project-content">
+                  <div className="text-project" data-aos="fade-right">
+                    <h3 className="contrast">{item.name}</h3>
+                    <p className="text">{item.description}</p>
+                    <Link href={item.url}>
+                      <button className="btn bg-slide">Ver repositório</button>
+                    </Link>
+                  </div>
+                  <div className="box-content">
+                    <Link className="link-project" href={item.url}>
+                      <img
+                        className="img-project"
+                        data-aos="fade-left"
+                        src={`${url}/assets/${item.name}.png`}
+                        alt={item.name}
+                        width={570}
+                        height={320}
+                        style={{ borderRadius: '30px' }}
+                        // onError={(e) =>
+                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
+                        // }
+                      ></img>
+                    </Link>
+                  </div>
                 </div>
-              ))}
-            {
-              /* ) : (
-                 <div key={item.id} className="project-content">
-                   <div className="text-project" data-aos="fade-right">
-                     <h3 className="contrast">{item.name}</h3>
-                     <p className="text">{item.description}</p>
-                     <Link href={item.url}>
-                       <button className="btn bg-slide">Ver repositório</button>
-                     </Link>
-                   </div>
-                   <div className="box-content">
-                   <Link className="link-project" href={item.url}> 
-                     <img */
-              //           className="img-project"
-              //           data-aos="fade-left"
-              //           src={`${url}/assets/${item.name}.png`}
-              //           alt={item.name}
-              //           width={570}
-              //           height={320}
-              //           style={{ borderRadius: '30px' }}
-              //           // onError={(e) =>
-              //           //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-              //           // }
-              //         />
-              //         {/* </Link> */}
-              //       </div>
-              //     </div>
-              //   ),
-              // )}
-              /* {displayedRepos.map((item) => (
+              ),
+            )}
+            {displayedRepos.map((item) => (
               <div key={item.id} className="project-content2">
                 <div className="box-content">
                   <Link className="link-project" href={item.url}>
@@ -316,8 +311,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-            ))} */
-            }
+            ))}
             <div className="box-see-more" data-aos="zoom-in">
               <button className="see-more text2" onClick={toggleRepos}>
                 {showAllRepos ? 'Ver menos' : 'Ver mais'}
