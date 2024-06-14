@@ -25,9 +25,9 @@ import {
 
 export default function Home() {
   // const [AvatarUrl, setAvatarUrl] = useState([])
-  const [ListRepos, setListRepos] = useState([])
+  // const [ListRepos, setListRepos] = useState([])
   const [showAllRepos, setShowAllRepos] = useState(false)
-  const displayedRepos = showAllRepos ? ListRepos : ListRepos.slice(0, 2)
+  // const displayedRepos = showAllRepos ? ListRepos : ListRepos.slice(0, 2)
   const toggleRepos = () => {
     setShowAllRepos(!showAllRepos)
   }
