@@ -233,25 +233,33 @@ export default function Home() {
                 style={{ borderRadius: '30px' }}
               ></Image>
             </div>
-            {displayedRepos.map((item) =>
+            <div className="text-project" data-aos="fade-left">
+              <h3 className="contrast">ImersãoDev Alura</h3>
+              <p className="text">
+                Desafios realizados durante a 6º edição da Imersão Dev, na qual
+                houveram 5 aulas com os professores Guilherme Lima, Rafaella
+                Ballerini e Paulo Silveira que proporcionaram ótimas
+                experiências e desafios direcionados a desenvolvimento web.
+                Aproveitei para aprimorar os meus conhecimentos em HTML, CSS e
+                Java Script que foram as tecnologias utilizadas.
+              </p>
+              <Link href="https://github.com/gustrpaz/ImersaoDev_Alura">
+                <button className="btn bg-slide">Ver repositório</button>
+              </Link>
+            </div>
+            {/* {displayedRepos.map((item) =>
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
                   <div className="box-content">
-                    {/* <Link className="link-project" href={item.url}> */}
                     <Image
                       className="img-project"
                       data-aos="fade-right"
-                      src={Teste}
-                      // src={`${url}/assets/${item.name}.png`}
+                      src={`${url}/assets/${item.name}.png`}
                       alt={item.name}
                       width={570}
                       height={320}
                       style={{ borderRadius: '30px' }}
-                      // onError={(e) =>
-                      //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                      // }
                     ></Image>
-                    {/* </Link> */}
                   </div>
                   <div className="text-project" data-aos="fade-left">
                     <h3 className="contrast">{item.name}</h3>
@@ -280,9 +288,6 @@ export default function Home() {
                         width={570}
                         height={320}
                         style={{ borderRadius: '30px' }}
-                        // onError={(e) =>
-                        //   (e.target.src = 'https://i.imgur.com/XEu32Uj.png')
-                        // }
                       ></Image>
                     </Link>
                   </div>
@@ -312,7 +317,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-            ))}
+            ))} */}
             <div className="box-see-more" data-aos="zoom-in">
               <button className="see-more text2" onClick={toggleRepos}>
                 {showAllRepos ? 'Ver menos' : 'Ver mais'}
