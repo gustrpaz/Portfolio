@@ -223,7 +223,7 @@ export default function Home() {
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
             </div>
-            <div className="project-content">
+            <div key="1" className="project-content">
               <div className="box-content">
                 <Image
                   className="img-project"
