@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { url } from './url'
 import { useEffect, useState } from 'react'
-import Teste from '../..//public/assets/ImersaoDev_Alura.png'
+import Teste from '../../public/assets/ImersaoDev_Alura.png'
 import jsonData from '../components/toolslist.json'
 import Logo from '../../public/assets/Logo.svg'
 import Emoji from '../../public/assets/Emoji.png'
@@ -24,10 +24,9 @@ import {
 } from '@apollo/client'
 
 export default function Home() {
-  // const [AvatarUrl, setAvatarUrl] = useState([])
   const [ListRepos, setListRepos] = useState([])
   const [showAllRepos, setShowAllRepos] = useState(false)
-  // const displayedRepos = showAllRepos ? ListRepos : ListRepos.slice(0, 2)
+  const displayedRepos = showAllRepos ? ListRepos : ListRepos.slice(0, 2)
   const toggleRepos = () => {
     setShowAllRepos(!showAllRepos)
   }
@@ -77,8 +76,6 @@ export default function Home() {
       const { user } = data
       const pinnedItems = user.pinnedItems.edges.map((edge) => edge.node)
       setListRepos(pinnedItems)
-      // const Avatar = user.avatarUrl
-      // setAvatarUrl(Avatar)
     } catch (erro) {
       console.log(erro)
     }
@@ -223,61 +220,7 @@ export default function Home() {
               <hr className="hrs hr3"></hr>
               <hr className="hrs hr4"></hr>
             </div>
-            <div className="project-content">
-              <div className="box-content">
-                <Image
-                  className="img-project"
-                  data-aos="fade-right"
-                  src={Teste}
-                  alt="teste"
-                  width={570}
-                  height={320}
-                  style={{ borderRadius: '30px' }}
-                ></Image>
-              </div>
-              <div className="text-project" data-aos="fade-left">
-                <h3 className="contrast">ImersãoDev Alura</h3>
-                <p className="text">
-                  Desafios realizados durante a 6º edição da Imersão Dev, na
-                  qual houveram 5 aulas com os professores Guilherme Lima,
-                  Rafaella Ballerini e Paulo Silveira que proporcionaram ótimas
-                  experiências e desafios direcionados a desenvolvimento web.
-                  Aproveitei para aprimorar os meus conhecimentos em HTML, CSS e
-                  Java Script que foram as tecnologias utilizadas.
-                </p>
-                <Link href="https://github.com/gustrpaz/ImersaoDev_Alura">
-                  <button className="btn bg-slide">Ver repositório</button>
-                </Link>
-              </div>
-            </div>
-            <div className="project-content2">
-              <div className="box-content">
-                <Image
-                  className="img-project"
-                  data-aos="fade-right"
-                  src={Teste}
-                  alt="teste"
-                  width={570}
-                  height={320}
-                  style={{ borderRadius: '30px' }}
-                ></Image>
-              </div>
-              <div className="text-project" data-aos="fade-left">
-                <h3 className="contrast">ImersãoDev Alura</h3>
-                <p className="text">
-                  Desafios realizados durante a 6º edição da Imersão Dev, na
-                  qual houveram 5 aulas com os professores Guilherme Lima,
-                  Rafaella Ballerini e Paulo Silveira que proporcionaram ótimas
-                  experiências e desafios direcionados a desenvolvimento web.
-                  Aproveitei para aprimorar os meus conhecimentos em HTML, CSS e
-                  Java Script que foram as tecnologias utilizadas.
-                </p>
-                <Link href="https://github.com/gustrpaz/ImersaoDev_Alura">
-                  <button className="btn bg-slide">Ver repositório</button>
-                </Link>
-              </div>
-            </div>
-            {/* {displayedRepos.map((item) =>
+            {displayedRepos.map((item) =>
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
                   <div className="box-content">
@@ -347,7 +290,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-            ))} */}
+            ))}
             <div className="box-see-more" data-aos="zoom-in">
               <button className="see-more text2" onClick={toggleRepos}>
                 {showAllRepos ? 'Ver menos' : 'Ver mais'}
