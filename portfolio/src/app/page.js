@@ -227,7 +227,7 @@ export default function Home() {
                     <Image
                       className="img-project"
                       data-aos="fade-right"
-                      src={`${url}/assets/${item.name}.png`}
+                      src={`/assets/${item.name}.png`}
                       alt={item.name}
                       width={570}
                       height={320}
@@ -256,7 +256,7 @@ export default function Home() {
                       <Image
                         className="img-project"
                         data-aos="fade-left"
-                        src={`${url}/assets/${item.name}.png`}
+                        src={`/assets/${item.name}.png`}
                         alt={item.name}
                         width={570}
                         height={320}
@@ -274,7 +274,7 @@ export default function Home() {
                     <Image
                       className="img-project"
                       data-aos="fade-right"
-                      src={`${url}/assets/${item.name}.png`}
+                      src={`/assets/${item.name}.png`}
                       alt={item.name}
                       width={570}
                       height={320}
