@@ -386,7 +386,7 @@ header {
   /* background-color: gray; */
 }
 
-.text-project a{
+.text-project a {
   margin-top: 1rem
 }
 
@@ -635,7 +635,7 @@ footer {
   }
 }
 
-@media(max-width:1150px){
+@media(max-width:1150px) {
   .wrapper {
     max-width: 970px;
   }
@@ -1167,7 +1167,7 @@ footer {
     font-size: 1.1em;
   }
 
-  .card{
+  .card {
     width: 8em;
   }
 }

@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { url } from './url'
 import { useEffect, useState } from 'react'
-// import Teste from '../../public/assets/ImersaoDev_Alura.png'
 import jsonData from '../components/toolslist.json'
 import Logo from '../../public/assets/Logo.svg'
 import Emoji from '../../public/assets/Emoji.png'
@@ -156,7 +155,7 @@ export default function Home() {
                 Apaixonado por tecnologia, tenho me dedicado constantemente aos
                 estudos na área da programação. Meu principal objetivo é
                 entregar os melhores resultados para o agrado dos clientes e o
-                desenvolvimento das empresas.
+                desenvolvimento da empresa.
               </p>
             </div>
             <Image
@@ -224,17 +223,20 @@ export default function Home() {
               displayedRepos.indexOf(item) % 2 === 0 ? (
                 <div key={item.id} className="project-content">
                   <div className="box-content">
-                    <Image
-                      className="img-project"
-                      data-aos="fade-right"
-                      src={`/assets/${item.name}.png`}
-                      alt={item.name}
-                      width={570}
-                      height={320}
-                      style={{ borderRadius: '30px' }}
-                    ></Image>
+                    <Link className="link-project" href={item.url}>
+                      <Image
+                        className="img-project"
+                        data-aos="fade-right"
+                        src={`/assets/${item.name}.png`}
+                        alt={item.name}
+                        width={570}
+                        height={320}
+                        style={{ borderRadius: '30px' }}
+                      ></Image>
+                    </Link>
                   </div>
                   <div className="text-project" data-aos="fade-left">
+                    {/* <div className="text-project"> */}
                     <h3 className="contrast">{item.name}</h3>
                     <p className="text">{item.description}</p>
                     <Link href={item.url}>
@@ -245,6 +247,7 @@ export default function Home() {
               ) : (
                 <div key={item.id} className="project-content">
                   <div className="text-project" data-aos="fade-right">
+                    {/* <div className="text-project"> */}
                     <h3 className="contrast">{item.name}</h3>
                     <p className="text">{item.description}</p>
                     <Link href={item.url}>
@@ -282,7 +285,7 @@ export default function Home() {
                     ></Image>
                   </Link>
                 </div>
-                <div className="text-project" data-aos="fade-left">
+                <div className="text-project" data-aos="slide-up">
                   <h3 className="contrast">{item.name}</h3>
                   <p className="text">{item.description}</p>
                   <Link href={item.url}>
@@ -315,7 +318,6 @@ export default function Home() {
               <div className="left-end" data-aos="fade-right">
                 <div className="outline-photo">
                   <Image
-                    // src={AvatarUrl}
                     src="https://avatars.githubusercontent.com/u/82393302?v=4"
                     width={275}
                     height={275}
