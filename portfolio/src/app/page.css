@@ -582,6 +582,14 @@ footer {
     width: 9em;
   }
 }
+@media(max-width: 1300px) {
+  .wrapper {
+    max-width: 1150px;
+  }
+  .listItems {
+    width: 55em;
+  }
+}
 
 @media(max-width: 1270px) {
   .wrapper {

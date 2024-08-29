@@ -11,7 +11,7 @@ import Avatar from '../../public/assets/Avatar.png'
 import GitHub from '../../public/assets/Github.svg'
 import Linkedin from '../../public/assets/Linkedin.svg'
 import Email from '../../public/assets/envelope.svg'
-import { Cursor, Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from 'react-simple-typewriter'
 import { setContext } from '@apollo/client/link/context'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
@@ -150,7 +150,7 @@ export default function Home() {
                   cursorColor="white"
                 />
               </h1>
-              <Cursor />
+              {/* <Cursor /> */}
               <p className="text">
                 Apaixonado por tecnologia, tenho me dedicado constantemente aos
                 estudos na área da programação. Meu principal objetivo é
