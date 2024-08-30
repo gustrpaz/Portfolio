@@ -11,10 +11,11 @@
 
 :root {
   --black: #1F1F1F;
+  --gray-light: #2F2F2F;
   --gray: #363636;
+  --shadow: rgba(255, 82, 82, 0.5);
   --red: #FF5252;
   --white: #FFFFFF;
-  --shadow: rgba(255, 82, 82, 0.5);
 
   scroll-behavior: smooth;
 }
@@ -71,8 +72,8 @@
   position: relative;
 
   color: #181818;
-  background: #FF5252;
-  box-shadow: 0px 0px 20px rgba(255, 82, 82, 0.5);
+  background: var(--red);
+  box-shadow: 0px 0px 20px var(--shadow);
 }
 
 .btn.bg-slide::before {
@@ -128,7 +129,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: #6764ff; */
 }
 
 .logo {
@@ -141,7 +141,6 @@ header {
   display: flex;
   list-style: none;
   justify-content: space-between;
-  /* background-color: rgb(237, 248, 141); */
 }
 
 .listItems a {
@@ -161,7 +160,7 @@ header {
   scale: 1.06;
   transition: all .2s ease-in-out;
   color: var(--red);
-  text-shadow: 0px 0px 15px rgba(255, 82, 82, 0.5);
+  text-shadow: 0px 0px 15px var(--shadow);
 }
 
 #introduction {
@@ -194,7 +193,7 @@ header {
 }
 
 .hello {
-  color: #FF5252;
+  color: var(--red);
 }
 
 .emoji {
@@ -236,14 +235,12 @@ header {
 .avatar {
   width: 30em;
   height: 30em;
-  /* width: 33%;
-  height: 60%; */
 }
 
 .hr {
   height: 0.2em;
   border: none;
-  background: linear-gradient(90deg, #252525 0%, #FF5252 100%);
+  background: linear-gradient(90deg, #252525 0%, var(--red) 100%);
 }
 
 #skills {
@@ -304,9 +301,9 @@ header {
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
-  color: #FFFFFF;
-  background: #2F2F2F;
-  box-shadow: 0px 0px 10px rgba(255, 82, 82, 0.5);
+  color: var(--white);
+  background: var(--gray-light);
+  box-shadow: 0px 0px 10px var(--shadow);
 }
 
 .area {
@@ -345,14 +342,14 @@ header {
 .load {
   width: 18.4em;
   height: 0.4em;
-  background: #2F2F2F;
+  background: var(--gray-light);
   border-radius: 20px;
 }
 
 .load div {
   height: 100%;
   border-radius: 20px;
-  background: linear-gradient(90deg, #AB3C3C 0%, #E84646 64.06%, #FF5252 100%);
+  background: linear-gradient(90deg, #AB3C3C 0%, #E84646 64.06%, var(--red) 100%);
 }
 
 .front {
@@ -383,7 +380,6 @@ header {
   display: flex;
   overflow: hidden;
   justify-content: space-between;
-  /* background-color: gray; */
 }
 
 .text-project a {
@@ -443,7 +439,7 @@ header {
   scale: 1.06;
   transition: all .2s ease-in-out;
   color: var(--white);
-  text-shadow: 0px 0px 15px rgba(255, 82, 82, 0.5);
+  text-shadow: 0px 0px 15px var(--shadow);
 }
 
 .hr5 {
@@ -481,8 +477,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 20px rgba(255, 82, 82, 0.5);
-  background: linear-gradient(180deg, #7C0303 0%, #FF5252 100%);
+  box-shadow: 0px 0px 20px var(--shadow);
+  background: linear-gradient(180deg, #7C0303 0%, var(--red) 100%);
 }
 
 .perfil-git {
@@ -784,7 +780,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background: #363636;
+    background: var(--gray);
     transition: 1s;
     visibility: hidden;
     overflow-y: hidden;

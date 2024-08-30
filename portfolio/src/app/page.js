@@ -150,7 +150,6 @@ export default function Home() {
                   cursorColor="white"
                 />
               </h1>
-              {/* <Cursor /> */}
               <p className="text">
                 Apaixonado por tecnologia, tenho me dedicado constantemente aos
                 estudos na área da programação. Meu principal objetivo é
@@ -236,7 +235,6 @@ export default function Home() {
                     </Link>
                   </div>
                   <div className="text-project" data-aos="fade-left">
-                    {/* <div className="text-project"> */}
                     <h3 className="contrast">{item.name}</h3>
                     <p className="text">{item.description}</p>
                     <Link href={item.url}>
@@ -247,7 +245,6 @@ export default function Home() {
               ) : (
                 <div key={item.id} className="project-content">
                   <div className="text-project" data-aos="fade-right">
-                    {/* <div className="text-project"> */}
                     <h3 className="contrast">{item.name}</h3>
                     <p className="text">{item.description}</p>
                     <Link href={item.url}>
