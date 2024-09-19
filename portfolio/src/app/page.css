@@ -70,7 +70,6 @@
   cursor: pointer;
   font-family: 'Aclonica';
   position: relative;
-
   color: #181818;
   background: var(--red);
   box-shadow: 0px 0px 20px var(--shadow);
@@ -360,6 +359,7 @@ header {
   width: 75%;
 }
 
+
 #projects {
   margin-top: 10rem;
   display: flex;
@@ -584,6 +584,9 @@ footer {
   }
   .listItems {
     width: 55em;
+  }
+  .load{
+    width:15.4em;
   }
 }
 
