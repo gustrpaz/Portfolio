@@ -1,55 +1,55 @@
-"use client";
-import "../../src/app/page.css";
-import Link from "next/link";
-import Image from "next/image";
-import { url } from "./url";
-import { useEffect, useState } from "react";
-import jsonData from "../components/toolslist.json";
-import Logo from "../../public/assets/Logo.svg";
-import Emoji from "../../public/assets/Emoji.png";
-import Avatar from "../../public/assets/Avatar.png";
-import GitHub from "../../public/assets/Github.svg";
-import Linkedin from "../../public/assets/Linkedin.svg";
-import Email from "../../public/assets/envelope.svg";
-import { Typewriter } from "react-simple-typewriter";
-import { setContext } from "@apollo/client/link/context";
-import Aos from "aos";
-import "aos/dist/aos.css";
+'use client'
+import '../../src/app/page.css'
+import Link from 'next/link'
+import Image from 'next/image'
+import { url } from './url'
+import { useEffect, useState } from 'react'
+import jsonData from '../components/toolslist.json'
+import Logo from '../../public/assets/Logo.svg'
+import Emoji from '../../public/assets/Emoji.png'
+import Avatar from '../../public/assets/Avatar.png'
+import GitHub from '../../public/assets/Github.svg'
+import Linkedin from '../../public/assets/Linkedin.svg'
+import Email from '../../public/assets/envelope.svg'
+import { Typewriter } from 'react-simple-typewriter'
+import { setContext } from '@apollo/client/link/context'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 import {
   ApolloClient,
   createHttpLink,
   InMemoryCache,
   gql,
-} from "@apollo/client";
+} from '@apollo/client'
 
 export default function Home() {
-  const [ListRepos, setListRepos] = useState([]);
-  const [showAllRepos, setShowAllRepos] = useState(false);
-  const displayedRepos = showAllRepos ? ListRepos : ListRepos.slice(0, 2);
+  const [ListRepos, setListRepos] = useState([])
+  const [showAllRepos, setShowAllRepos] = useState(false)
+  const displayedRepos = showAllRepos ? ListRepos : ListRepos.slice(0, 2)
   const toggleRepos = () => {
-    setShowAllRepos(!showAllRepos);
-  };
+    setShowAllRepos(!showAllRepos)
+  }
   useEffect(() => {
-    Aos.init({ duration: 1500 });
-    GetStaticProps();
-  }, []);
+    Aos.init({ duration: 1500 })
+    GetStaticProps()
+  }, [])
   const GetStaticProps = async () => {
     try {
       const httpLink = createHttpLink({
-        uri: "https://api.github.com/graphql",
-      });
+        uri: 'https://api.github.com/graphql',
+      })
       const authLink = setContext((_, { headers }) => {
         return {
           headers: {
             ...headers,
             authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`,
           },
-        };
-      });
+        }
+      })
       const client = new ApolloClient({
         link: authLink.concat(httpLink),
         cache: new InMemoryCache(),
-      });
+      })
       const { data } = await client.query({
         query: gql`
           {
@@ -71,19 +71,19 @@ export default function Home() {
             }
           }
         `,
-      });
-      const { user } = data;
-      const pinnedItems = user.pinnedItems.edges.map((edge) => edge.node);
-      setListRepos(pinnedItems);
+      })
+      const { user } = data
+      const pinnedItems = user.pinnedItems.edges.map((edge) => edge.node)
+      setListRepos(pinnedItems)
     } catch (erro) {
-      console.log(erro);
+      console.log(erro)
     }
-  };
-  console.log(ListRepos);
-  const [active, setMode] = useState(false);
+  }
+  console.log(ListRepos)
+  const [active, setMode] = useState(false)
   const ToggleMode = () => {
-    setMode(!active);
-  };
+    setMode(!active)
+  }
   return (
     <>
       <header data-aos="slide-down">
@@ -92,12 +92,12 @@ export default function Home() {
             <Image className="logo" src={Logo} alt="Logo Rezende"></Image>
           </a>
           <div
-            className={active ? "icon iconActive" : "icon"}
+            className={active ? 'icon iconActive' : 'icon'}
             onClick={ToggleMode}
           >
             <div className="hamburguer hamburguerIcon"></div>
           </div>
-          <div className={active ? "menu menuOpen" : "menu menuClose"}>
+          <div className={active ? 'menu menuOpen' : 'menu menuClose'}>
             <nav id="nav">
               <ul className="listItems">
                 <li>
@@ -137,9 +137,9 @@ export default function Home() {
               <h1 className="title s">
                 <Typewriter
                   words={[
-                    "Desenvolvedor FullStack",
-                    "Designer",
-                    "Sistemas de Informação",
+                    'Desenvolvedor FullStack',
+                    'Designer',
+                    'Sistemas de Informação',
                   ]}
                   loop={true}
                   cursor
@@ -230,7 +230,7 @@ export default function Home() {
                         alt={item.name}
                         width={570}
                         height={320}
-                        style={{ borderRadius: "30px" }}
+                        style={{ borderRadius: '30px' }}
                       ></Image>
                     </Link>
                   </div>
@@ -260,12 +260,12 @@ export default function Home() {
                         alt={item.name}
                         width={570}
                         height={320}
-                        style={{ borderRadius: "30px" }}
+                        style={{ borderRadius: '30px' }}
                       ></Image>
                     </Link>
                   </div>
                 </div>
-              )
+              ),
             )}
             {displayedRepos.map((item) => (
               <div key={item.id} className="project-content2">
@@ -278,7 +278,7 @@ export default function Home() {
                       alt={item.name}
                       width={570}
                       height={320}
-                      style={{ borderRadius: "30px" }}
+                      style={{ borderRadius: '30px' }}
                     ></Image>
                   </Link>
                 </div>
@@ -293,7 +293,7 @@ export default function Home() {
             ))}
             <div className="box-see-more" data-aos="zoom-in">
               <button className="see-more text2" onClick={toggleRepos}>
-                {showAllRepos ? "Ver menos" : "Ver mais"}
+                {showAllRepos ? 'Ver menos' : 'Ver mais'}
               </button>
               <hr className="hrs hr5"></hr>
             </div>
@@ -318,7 +318,7 @@ export default function Home() {
                     src="https://avatars.githubusercontent.com/u/82393302?v=4"
                     width={275}
                     height={275}
-                    style={{ borderRadius: "10px" }}
+                    style={{ borderRadius: '10px' }}
                     alt="Gustavo"
                     className="perfil-git"
                   ></Image>
@@ -386,5 +386,5 @@ export default function Home() {
         © Todos os Diretos Reservados - Gustavo Rezende
       </footer>
     </>
-  );
+  )
 }
