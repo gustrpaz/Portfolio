@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost', 'avatars.githubusercontent.com'], // Adicione aqui o domínio da sua imagem
+    domains: ["localhost", "avatars.githubusercontent.com"], // Adicione aqui o domínio da sua imagem
   },
   env: {
-    PUBLIC_URL: '/',
+    PUBLIC_URL: "/",
   },
-}
-module.exports = nextConfig
+};
+module.exports = nextConfig;

@@ -324,7 +324,7 @@ export default function Home() {
                   ></Image>
                 </div>
                 <div className="box-profile">
-                  <span className="text2">Gustavo Rezende Paz, 19 anos</span>
+                  <span className="text2">Gustavo Rezende Paz, 20 anos</span>
                   <ul>
                     <li className="text">
                       Curso técnico de Desenvolvimento de Sistemas
